@@ -1,0 +1,76 @@
+# Resolve react_native_pods.rb with node to allow for hoisting
+require Pod::Executable.execute_command('node', ['-p',
+  'require.resolve(
+    "react-native/scripts/react_native_pods.rb",
+    {paths: [process.argv[1]]},
+  )', __dir__]).strip
+
+platform :ios, min_ios_version_supported
+prepare_react_native_project!
+use_modular_headers!
+
+linkage = ENV['USE_FRAMEWORKS'] || 'static'
+if linkage != nil
+  Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
+  use_frameworks! :linkage => linkage.to_sym
+end
+
+target 'Veysh' do
+  config = use_native_modules!
+
+  use_react_native!(
+    :path => config[:reactNativePath],
+
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  post_install do |installer|
+    react_native_post_install(
+      installer,
+      config[:reactNativePath],
+      :mac_catalyst_enabled => false,
+      # :ccache_enabled => true
+    )
+    
+  
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        pch = config.build_settings['GCC_PREFIX_HEADER']
+        if pch
+     
+          pch_path = pch.gsub("$(PODS_TARGET_SRCROOT)", ".").gsub("${PODS_TARGET_SRCROOT}", ".")
+          
+       
+          pch_path = pch_path.gsub("$(PODS_ROOT)", installer.sandbox.root.to_s).gsub("${PODS_ROOT}", installer.sandbox.root.to_s)
+
+          unless Pathname.new(pch_path).absolute?
+             pch_path = File.join(installer.sandbox.root, pch_path)
+          end
+          
+          if File.exist?(pch_path)
+          
+            content = File.read(pch_path)
+            unless content.include?("FOUNDATION_EXPORT extern \"C\"")
+              File.open(pch_path, "a") do |f|
+                f.puts "\n// Patch for FOUNDATION_EXPORT"
+                f.puts "#ifdef __OBJC__"
+                f.puts "#import <UIKit/UIKit.h>"
+                f.puts "#else"
+                f.puts "#ifndef FOUNDATION_EXPORT"
+                f.puts "#if defined(__cplusplus)"
+                f.puts "#define FOUNDATION_EXPORT extern \"C\""
+                f.puts "#else"
+                f.puts "#define FOUNDATION_EXPORT extern"
+                f.puts "#endif"
+                f.puts "#endif"
+                f.puts "#endif"
+              end
+            end
+          end
+        end
+      end
+    end
+  end
+end
+
+

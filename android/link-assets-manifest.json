@@ -1,0 +1,81 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-BoldItalic.ttf",
+      "sha1": "5b3c4ca0d6dd519e22128de84fb0bc9656987467"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-Light.ttf",
+      "sha1": "0ff2bfef2e543ccd9e9eda6950f979dead8260f6"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-Italic.ttf",
+      "sha1": "dd1e361faa275fbdbf69da1329f3a79356c88ad2"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-Regular.ttf",
+      "sha1": "3e745340c12d548d165b5e0c5423c638ba989905"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-SemiBoldItalic.ttf",
+      "sha1": "18b4e4eb78fa7890a722db3e21895464e2019486"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-LightItalic.ttf",
+      "sha1": "c205ca187fb6d7570d9831a3b38234c304af42d3"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-MediumItalic.ttf",
+      "sha1": "a56257c72df7c36f5c8746ac68c8b4cb65d667c5"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-Bold.ttf",
+      "sha1": "6c1033755d232430df7a946b05d3e3a8628c8f6d"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-Medium.ttf",
+      "sha1": "21945a0236c76797154548812dea895f3bb524fa"
+    },
+    {
+      "path": "src/assets/font/Cormorant_Infant/static/CormorantInfant-SemiBold.ttf",
+      "sha1": "6f3cb31a6cae18733094c0c77417d7a6529a91be"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Bold.ttf",
+      "sha1": "148c9a4f145442e85509a202472f3dfc002f2359"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Regular.ttf",
+      "sha1": "06a8de7221f96cdce3e90e32444f1db7897b479a"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Black.ttf",
+      "sha1": "ea3a5e53fe33a31ff5c020bea83e933e380e0620"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Thin.ttf",
+      "sha1": "f20be5b036a2a7452d142c9947ee774988a10352"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-SemiBold.ttf",
+      "sha1": "187a51467f6faeab3853f62a38c729817a938bc0"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-ExtraLight.ttf",
+      "sha1": "351d1b900b0055d0ac42069f1f6dc4f03207767d"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-ExtraBold.ttf",
+      "sha1": "a46134346caa0c18b65157641be59e5973037ded"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Medium.ttf",
+      "sha1": "9d7db2e6a458135b81b68078a7f4863fa17c2024"
+    },
+    {
+      "path": "src/assets/font/Outfit/static/Outfit-Light.ttf",
+      "sha1": "22de7012df58897c09b4d31b963d317293237c1e"
+    }
+  ]
+}

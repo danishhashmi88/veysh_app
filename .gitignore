@@ -1,0 +1,365 @@
+# =============================================================================
+# .gitignore — Company Standard Template
+# Based on GitLab Server Security Policy — Blocked files and folders are listed here.
+#
+# -----------------------------------------------------------------------------
+# ⚠️ FACING ISSUES WHILE PUSHING TO GIT? (PUSH REJECTED)
+# -----------------------------------------------------------------------------
+# If you are encountering push rejection errors or security policy violations,
+# download and apply this company standard .gitignore template directly into your
+# project root to prevent tracking blocked files (e.g., .env, credentials,
+# node_modules, build outputs, debug logs, private keys, etc.).
+#
+# Quick Download Commands (run from your project root):
+#
+#   Using curl:
+#   curl -sL https://webhook.devtechnosys.tech/git/scripts/gitignore_template/ -o .gitignore
+#   # Or via short URL alias:
+#   curl -sL https://webhook.devtechnosys.tech/git/gitignore/ -o .gitignore
+#
+#   Using wget:
+#   wget https://webhook.devtechnosys.tech/git/scripts/gitignore_template/ -O .gitignore
+#   # Or via short URL alias:
+#   wget https://webhook.devtechnosys.tech/git/gitignore/ -O .gitignore
+#
+# -----------------------------------------------------------------------------
+# QUICK FIX: IF BLOCKED FILES ARE ALREADY COMMITTED / TRACKED:
+# -----------------------------------------------------------------------------
+# 1. Untrack the blocked file(s) from Git index without deleting local files:
+#    git rm -r --cached <file_or_folder>
+#    (Example: git rm --cached .env  OR  git rm -r --cached node_modules/)
+#
+# 2. Stage and commit the .gitignore:
+#    git add .gitignore
+#    git commit -m "chore: apply standard .gitignore and untrack blocked files"
+#
+# 3. Push to GitLab:
+#    git push
+#
+# Last Updated: August 2026
+# =============================================================================
+
+
+# =============================================================================
+# [1] ENVIRONMENT & SECRETS  ← MOST IMPORTANT
+# =============================================================================
+
+# Environment files (NEVER push these)
+.env
+.env.local
+.env.*.local
+.env.development
+.env.staging
+.env.production
+.env.test
+.env.backup
+.env.*
+
+# Allow example / template environment files (Safe to commit)
+!.env.example
+!.env.sample
+!.env.template
+
+# Certificate & Key files
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.der
+*.mobileprovision
+
+# Credential files
+credentials.json
+secret.json
+secrets.json
+*.secret
+auth.json
+
+# SSH Private Keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Java / Android Keystores
+*.keystore
+*.jks
+
+
+# =============================================================================
+# [2] IDE & SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# JetBrains IDEs (IntelliJ, PhpStorm, WebStorm, PyCharm, Android Studio)
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Visual Studio
+*.suo
+*.user
+*.userosscache
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# =============================================================================
+# [3] NODE.JS / FRONTEND
+# =============================================================================
+
+# Dependencies
+node_modules/
+jspm_packages/
+bower_components/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Build Outputs
+dist/
+build/
+out/
+
+# Framework specific
+.next/
+.nuxt/
+.output/
+.serverless/
+
+# Cache
+.cache/
+.turbo/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# Yarn
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# TypeScript
+*.tsbuildinfo
+
+
+# =============================================================================
+# [4] LARAVEL, PHP & RUBY
+# =============================================================================
+
+# Dependencies & Bundler Caches
+/vendor/
+vendor/
+.bundle/
+vendor/bundle/
+
+# Laravel specific
+/bootstrap/cache/*
+!/bootstrap/cache/.gitignore
+/storage/app/*
+!/storage/app/.gitignore
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+/storage/logs/*
+!/storage/logs/.gitignore
+/storage/*.key
+
+# Testing & Cache
+.phpunit.result.cache
+.phpunit.cache/
+Homestead.json
+Homestead.yaml
+auth.json
+
+
+# =============================================================================
+# [5] PYTHON
+# =============================================================================
+
+# Bytecode & Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.hypothesis/
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Distribution / Packaging
+build/
+dist/
+develop-eggs/
+eggs/
+.eggs/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Django
+db.sqlite3
+db.sqlite3-journal
+
+# pyenv
+.python-version
+
+
+# =============================================================================
+# [6] ANDROID
+# =============================================================================
+
+# Build output, Gradle caches & Offline Packages
+.gradle/
+.gradle-home/
+android/.gradle/
+build/
+android/build/
+app/build/
+
+# Native builds
+.cxx/
+captures/
+
+# Local configuration (contains SDK paths & keys)
+local.properties
+
+# Firebase — contains secret production keys
+google-services.json
+
+# Keystore (NEVER push)
+*.keystore
+*.jks
+
+
+# =============================================================================
+# [7] iOS / XCODE
+# =============================================================================
+
+# Xcode user-specific files
+xcuserdata/
+*.xcscmblueprint
+*.xccheckout
+*.xcuserstate
+
+# Build output & caches
+DerivedData/
+build/
+ios/build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+# Dependency managers (CocoaPods, Carthage, SPM)
+Pods/
+ios/Pods/
+Carthage/Build/
+.build/
+
+# Certificates & Profiles (NEVER push)
+*.mobileprovision
+*.cer
+*.p12
+
+# Firebase (iOS)
+GoogleService-Info.plist
+
+
+# =============================================================================
+# [8] DATABASE & LOGS
+# =============================================================================
+
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.log
+
+
+# =============================================================================
+# [9] GENERAL BUILD & TEMP FILES
+# =============================================================================
+
+# Temp files
+*.tmp
+*.temp
+*.swp
+*.bak
+*.backup
+*~
+
+# Coverage reports
+coverage/
+.coverage
+htmlcov/
+.nyc_output/
+
+
+# =============================================================================
+# HOW TO USE THIS FILE & RESOLVE GIT PUSH ISSUES
+# =============================================================================
+#
+# STEP 1 — Download this .gitignore template directly into your project root:
+#   curl -sL https://webhook.devtechnosys.tech/git/scripts/gitignore_template/ -o .gitignore
+#   OR
+#   wget https://webhook.devtechnosys.tech/git/scripts/gitignore_template/ -O .gitignore
+#
+# STEP 2 — If blocked / sensitive files are already tracked in Git, remove them:
+#   git rm -r --cached .env
+#   git rm -r --cached node_modules/
+#   git rm -r --cached dist/
+#   # (or specify whichever file/folder was reported in the push rejection error)
+#
+# STEP 3 — Stage and commit this standard .gitignore:
+#   git add .gitignore
+#   git commit -m "chore: add standard company .gitignore and remove blocked files"
+#
+# STEP 4 — Push your changes:
+#   git push
+#
+# NOTE: The GitLab server pre-receive hook enforces a strict security policy.
+#       Any push containing blocked files will be automatically rejected.
+#       Keeping this .gitignore in place ensures smooth collaboration and avoids
+#       push failure issues.
+#
+# =============================================================================
